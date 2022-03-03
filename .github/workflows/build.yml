@@ -13,9 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - name: Installation Dependency With Nodejs
       - run: npm install
-      - name: Build With Nodejs
       - run: npm run docs:build
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
