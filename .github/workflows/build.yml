@@ -16,6 +16,7 @@ jobs:
           node-version: 16
       - name: Installation Dependency
         run: npm install
+      - name: Test Build
         run: npm run docs:build
       - name: Clean Build
         run: rm -rf docs/.vuepress/dist
