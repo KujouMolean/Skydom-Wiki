@@ -9,14 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Set Nodejs Version 16
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: npm install
-      - run: npm run docs:build
-      - run: rm -rf docs/.vuepress/dist
-      - run: npm run docs:build
+      - name: Installation Dependency
+        run: npm install
+        run: npm run docs:build
+      - name: Clean Build
+        run: rm -rf docs/.vuepress/dist
+      - name: Build
+        run: npm run docs:build
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
